@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SneakerShop</title>
+    <link rel="stylesheet" href="page.css">
+    <link rel="icon" href="https://mysneakershop.es/wp-content/uploads/2021/02/cropped-logo_mss.png">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+            crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+    <section>
+        <header class="header">
+            <a href="#"><img width="200" src="logo.png" class="logo" /></a>
+            <ul class="navigation">
+                <li class="home"><a href="HTMLPage1.html">Home</a></li>
+                <li class="products"><a href="Products.html">Products</a></li>
+
+                <li class="dropdown">
+                    <button class="dropbtn" onclick="myFunction()">
+                        Account
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content" id="myDropdown">
+                        <a href="MyAccount.html">My Account</a>
+                        <a href="#">Favorite</a>
+                        <a href="Login.html">Log out</a>
+                    </div>
+                </li>
+                <li style="margin-right: 30px; margin-left: 20px;" class="langWrap">
+                    <a href="#en" language='english' class="active">EN</a>
+                    <a href="#ru" language='russian'>РУ</a>
+                </li>
+            </ul>
+        </header>
+        <div class="content">
+            <div class="textBox">
+        <h1>Personal Info</h1>
+           </div>
+                <div class="rightBox">
+                    <div class="profile tabShow">
+                        <h2>Full Name</h2>
+                        <input type="text" class="input" value="Kamila Orynbassar" />
+                        <h2>Email</h2>
+                        <input type="text" class="input" value="example@gmail.com" />
+                        <h2>Email</h2>
+                        <input type="password" class="input" value="password" />
+                        <h2>Birthday</h2>
+                        <input type="text" class="input" value="February 6, 2002" />
+                        <h2>Gender</h2>
+                        <input type="text" class="input" value="Gemale" />
+                        <button class="btn">Update</button>
+                    </div>
+                </div>
+            
+           </div>
+        </section>
+        
+    <footer class="footer">
+        <div class="first">
+            <div><p><a href="Home.html">Sneaker Shop</a></p></div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco  </p>
+            <a href="#" style="color: white"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" style="color: white"><i class="fab fa-twitter"></i></a>
+            <a href="#" style="color: white"><i class="far fa-envelope"></i></a>
+            <a href="#" style="color: white"><i class="fab fa-youtube"></i></a>
+            <a href="#" style="color: white"><i class="fab fa-telegram-plane"></i></a>
+
+        </div>
+        <div class="second">
+            <div style="display: flex; flex-direction: column; margin-right: 80px;">
+                <a href="#">Environment</a>
+                <a href="#">Business & Policy</a>
+                <a href="#">Welcome!</a>
+                <a href="Page3.html">News</a>
+            </div>
+            <div style="display: flex; flex-direction: column; margin-right: 80px;">
+                <a href="#">About Us</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Careers</a>
+                <a href="#">Comments</a>
+            </div>
+            <div style="display: flex; flex-direction: column; margin-right: 80px;">
+                <a href="#">Advertise</a>
+                <a href="#">Cookie Policy</a>
+                <a href="#">Editorial Guidelines</a>
+                <a href="#">Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="Script1.js"></script>
+    <script src="jquery/jquery.js"></script>
+    <script>
+        const langEl = document.querySelector('.langWrap');
+        const link = document.querySelectorAll('a');
+        const titleEl = document.querySelector('.title');
+        const homeEl = document.querySelector('.home');
+        const accountEl = document.querySelector('.dropdown-toggle');
+        const productsEl = document.querySelector('.products');
+        const registerEl = document.querySelector('.register');
+        const loginEl = document.querySelector('.login');
+        const textEl = document.querySelector('.text');
+        const moreEl = document.querySelector('.more');
+        const contactEl = document.querySelector('.contact');
+
+        link.forEach(el => {
+            el.addEventListener('click', () => {
+                langEl.querySelector('.active').classList.remove('active');
+                el.classList.add('active');
+
+                const attr = el.getAttribute('language');
+
+                titleEl.textContent = data[attr].title;
+                homeEl.textContent = data[attr].home;
+                accountEl.textContent = data[attr].dropdown - toggle;
+                productsEl.textContent = data[attr].products;
+                registerEl.textContent = data[attr].register;
+                loginEl.textContent = data[attr].login;
+                textEl.textContent = data[attr].text;
+                moreEl.textContent = data[attr].more;
+                contactEl.textContent = data[attr].contact;
+            });
+        });
+
+        var data = {
+            "english": {
+                "title": "Welcome!",
+                "home": "Home",
+                "dropdown-toggle": "My Account",
+                "products": "Products",
+                "register": "Register",
+                "login": "Login",
+                "text":
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                "more": "More",
+                "contact": "Contact Us"
+
+            },
+            "russian": {
+                "title": "Добро пожаловать!",
+                "home": "Главная",
+                "dropdown-toggle": "Мой Аккаунт",
+                "products": "Продукты",
+                "register": "Регистрация",
+                "login": "Вход",
+                "text":
+                    "Камила красотка, Мерей красотка, Камила красотка, Мерей красотка, Камила красотка, Мерей красотка, Камила красотка, Мерей красотка, Камила красотка, Мерей красотка, Камила красотка, Мерей красотка,  Камила красотка, Мерей красотка, Расул тичер тоже))).",
+                "more": "Еще",
+                "contact": "Контакты"
+            }
+        }
+
+
+
+    </script>
+</body>
+</html>
